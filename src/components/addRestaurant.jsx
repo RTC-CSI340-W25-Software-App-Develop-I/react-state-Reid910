@@ -8,17 +8,18 @@ function AddRestaurant({ updateRestaurants }) {
     rating: ""
   });
 
-  const handleChange = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-    setFormData({ ...formData, [name]: value });
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData)
     updateRestaurants(formData)
   };
 
+  const handleChange = (e) => {
+    const name = e.target.name
+    const value = e.target.value
+    setFormData({ ...formData, [name]: value });
+  };
+  
   return (
     <form onSubmit={handleSubmit}>
       <div>
